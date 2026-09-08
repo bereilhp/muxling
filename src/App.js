@@ -5,7 +5,6 @@ import { getShell, spawnPty } from "./pty.js"
 import {
   createWindowState,
   formatWindowBar,
-  getNextWindowIndex,
 } from "./window-state.js"
 
 function killPty(terminal) {
@@ -97,10 +96,6 @@ export function App({ initialSize = { columns: 80, rows: 24 } }) {
     renderer.destroy()
   }, [renderer, windows])
 
-  const selectRelative = useCallback((direction) => {
-    setActiveIndex((current) => getNextWindowIndex(windows, current, direction))
-  }, [windows])
-
   const startRename = useCallback(() => {
     const window = windows[activeIndex]
     if (!window) return
@@ -133,16 +128,6 @@ export function App({ initialSize = { columns: 80, rows: 24 } }) {
       return
     }
 
-    if (key.name === "n") {
-      selectRelative(1)
-      return
-    }
-
-    if (key.name === "p") {
-      selectRelative(-1)
-      return
-    }
-
     if (key.name === "r") {
       startRename()
       return
@@ -168,7 +153,7 @@ export function App({ initialSize = { columns: 80, rows: 24 } }) {
       const index = Number(key.name)
       if (index < windows.length) setActiveIndex(index)
     }
-  }, [activeIndex, closeWindow, createWindow, quit, selectRelative, startRename, windows])
+  }, [activeIndex, closeWindow, createWindow, quit, startRename, windows])
 
   useKeyboard((key) => {
     if (key.eventType !== "press" && key.eventType !== "repeat") return

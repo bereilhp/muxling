@@ -23,8 +23,6 @@ bun run start
 Muxling uses `Ctrl+B` as its prefix:
 
 - `Ctrl+B c` — create a window
-- `Ctrl+B n` — next window
-- `Ctrl+B p` — previous window
 - `Ctrl+B r` — rename the active window
 - `Ctrl+B 0..9` — select a window
 - `Ctrl+B x` — close the active window

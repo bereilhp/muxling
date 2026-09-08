@@ -26,7 +26,7 @@ application and manually verify the terminal behavior:
 - The app opens with one shell window and a `$ ` prompt.
 - Shell commands can be typed and run.
 - `Ctrl+B c` creates a new window.
-- `Ctrl+B n`, `Ctrl+B p`, and `Ctrl+B 0..9` switch windows.
+- `Ctrl+B 0..9` switches windows.
 - `Ctrl+B r` renames the active window; `Enter` saves and `Esc` cancels.
 - The cursor is active in the selected shell after switching.
 - `Ctrl+B x` closes the active window.
