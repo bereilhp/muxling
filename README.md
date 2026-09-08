@@ -11,7 +11,23 @@ single TUI process; it does not support attach, detach, panes, or persistence.
 - Bun 1.3 or newer.
 - A terminal supported by OpenTUI.
 
-Install dependencies and run it with:
+Install Muxling globally with Bun:
+
+```sh
+bun add --global muxling
+muxling
+```
+
+Or install it with npm:
+
+```sh
+npm install --global muxling
+muxling
+```
+
+Bun must be installed on your system because Muxling runs on Bun.
+
+To run the repository locally:
 
 ```sh
 bun install
