@@ -16,7 +16,7 @@ export function formatWindowBar(windows, activeIndex, prefixPending = false) {
   const windowLabels = windows.map((window, index) => {
     const marker = index === activeIndex ? "*" : "-"
     const status = window.status === "running" ? "" : " (exited)"
-    return `${marker}${window.id}:${window.title}${status}`
+    return `${marker}${index}:${window.title}${status}`
   })
 
   const prefix = prefixPending ? " | PREFIX" : ""
