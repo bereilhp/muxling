@@ -2,6 +2,11 @@ name: Release
 
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag to publish"
+        required: false
+        type: string
   push:
     tags:
       - "v*.*.*"
